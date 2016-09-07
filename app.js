@@ -11,6 +11,7 @@ function createWindow () {
   let  mainWindow = new BrowserWindow({width: 1600, height: 1000});
   Menu.setApplicationMenu(null)
   mainWindow.loadURL('file://' + __dirname + '/app/index.html');
+  // or   mainWindow.loadURL('http://localhost:8080/index.html');
 
   mainWindow.on('closed', (() => mainWindow = null ));
 };
