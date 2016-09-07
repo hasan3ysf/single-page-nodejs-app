@@ -5,6 +5,7 @@ const app = require('electron').app;
 function createServer () {
 'use strict';
     var http      = require("http"),
+        url       = require('url'),
         WebSocket = require('faye-websocket'),
         server    = http.createServer(),
         host      = '172.0.0.1',
@@ -33,13 +34,16 @@ function createServer () {
             res.writeHead(200, headers)
             res.end()
        }    
+
+       let path = `${url.parse(req.url).pathname}`
+
        if (!WebSocket.EventSource.isEventSource(req))
            if (req.url.indexOf("api") === 1)
-               return apiHandler(req, res)
+               return apiHandler(req, res, path)
            else
-              return staticHandler(req, res) 
+              return staticHandler(req, res, path) 
        else
-             return essHandler(req, res);
+             return essHandler(req, res, path);
     };
 
     var startServer = (() => console.log('Server Started @ ' + server.address().port))
