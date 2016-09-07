@@ -11,7 +11,8 @@
       };
 
       eventsource.addEventListener('name', function(event) {
-          console.log(event.lastEventId + ' : '+event.data);
+              var data = JSON.parse(event.data);
+              for(var i=0; i<data.length; i++) console.log(`Item Code: ${data[i].ItemCode}, Item Name: ${data[i].ItemName}` );
       });
 
       eventsource.onerror = function(event) {
