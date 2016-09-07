@@ -43,9 +43,6 @@ exports.handleReq = function (req, res) {
         res.end(data);
       }
     });
-
-
-
   //    res.end(`File ${pathname} not found!`)
       return;
     }
@@ -65,6 +62,4 @@ exports.handleReq = function (req, res) {
       }
     });
   });
-
-
 }
