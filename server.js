@@ -41,7 +41,7 @@ function createServer () {
            if (req.url.indexOf("api") === 1)
                return apiHandler(req, res, path)
            else
-              return staticHandler(req, res, path) 
+              return staticHandler(req, res) 
        else
              return essHandler(req, res, path);
     };
