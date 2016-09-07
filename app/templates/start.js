@@ -1,0 +1,1 @@
+window.TXT__TEMPLATE ='<div>hi {{Title}}</div>';
