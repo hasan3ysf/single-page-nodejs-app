@@ -1,7 +1,5 @@
-
-exports.handleReq = function (req, res) {
-        var path = req.url,
-            store = '',
+exports.handleReq = function (req, res, path) {
+        var store = '',
             buffer = {},
             api    = path.substr(5)   // remove the /api/ from the path: /api/login => login
             req.on('data', ((data) => store += data))
