@@ -25,6 +25,7 @@
     "electron-winstaller": "^2.3.4"
   },
   "dependencies": {
+    "faye-websocket": "^0.11.0",
     "sequelize": "^3.24.1",
     "sqlite3": "^3.1.4"
   }
